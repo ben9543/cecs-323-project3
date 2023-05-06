@@ -1,0 +1,18 @@
+[
+    {
+    "_id": 1234,
+    "founding_date": "2022-09-01",
+    "community": "Long Beach",
+    "scouts":[],
+    "volunteers": [],
+    "allotments": []
+  },
+  {
+    "_id": 5678,
+    "founding_date": "2023-01-01",
+    "community": "Cerritos",
+    "scouts":[],
+    "volunteers": [],
+    "allotments": []
+  }
+]

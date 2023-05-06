@@ -1,0 +1,21 @@
+[
+    {
+      "_id": {"$oid": "614d633ab156bc7c1f684ddb"},
+      "name": "Thin Mint",
+      "price": {"$numberDecimal": "6"},
+      "ingredients": ["sugar", "cocoa", "mint oil"]
+    },
+    {
+      "_id": {"$oid": "614d633ab156bc7c1f684ddc"},
+      "name": "Samoa",
+      "price": {"$numberDecimal": "6"},
+      "ingredients": ["cocoa", "coconut extract", "sugar", "butter"]
+    },
+    {
+      "_id": {"$oid": "614d633ab156bc7c1f684ddd"},
+      "name": "Tagalongs",
+      "price": {"$numberDecimal": "6"},
+      "ingredients": ["cocoa", "sugar", "peanut oil", "peanut butter"]
+    }
+]
+  
