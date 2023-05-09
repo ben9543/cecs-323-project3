@@ -69,11 +69,7 @@
               "bsonType": "array",
               "items": {
                 "bsonType": "object",
-                "required": [
-                  "adultid",
-                  "firstname",
-                  "lastname"
-                ],
+                "required": ["adultid", "firstname", "lastname"],
                 "properties": {
                   "adultid": {
                     "bsonType": "objectId"
@@ -121,10 +117,7 @@
               "bsonType": "array",
               "items": {
                 "bsonType": "object",
-                "required": [
-                  "amount",
-                  "paymentdate"
-                ],
+                "required": ["amount", "paymentdate"],
                 "properties": {
                   "amount": {
                     "bsonType": "decimal"
@@ -142,12 +135,7 @@
         "bsonType": "array",
         "items": {
           "bsonType": "object",
-          "required": [
-            "adultid",
-            "firstname",
-            "lastname",
-            "position"
-          ],
+          "required": ["adultid", "firstname", "lastname", "position"],
           "properties": {
             "adultid": {
               "bsonType": "objectId"
