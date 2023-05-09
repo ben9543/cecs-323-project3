@@ -1,11 +1,7 @@
-from pymongo import MongoClient, database
+from pymongo import MongoClient
 
-# HOST = "localhost"
-# PORT = "27017"
-# DATABASE_URL = f"mongodb://{HOST}:{PORT}"
 DATABASE_URL = "mongodb+srv://cecs327assignment:cecs327assignment@cluster0.bsjkxmo.mongodb.net/?retryWrites=true&w=majority"
 DATABASE_NAME = "project3"
-collections = {"adults": "adults", "troops": "troops", "cookie_types": "cookietypes"}
 
 
 def OpenConnection():
@@ -16,12 +12,14 @@ def OpenConnection():
         print(e)
         return None
 
+
 def ExecuteAggregation(db, collectionName, pipline):
     try:
         return list(db[collectionName].aggregate(pipline))
     except Exception as e:
         print(e)
         return None
+
 
 def main():
     choice = -1
@@ -35,7 +33,6 @@ def main():
         if choice == 1:
             troopNum = int(input("Enter Troop Number: "))
             print("----------")
-            # collectionName = collections["troops"]
             pipline = [{"$match": {"_id": troopNum}}]
             troop = ExecuteAggregation(db=db, collectionName="troops", pipline=pipline)
             print(
@@ -62,11 +59,14 @@ def main():
             scoutFN = input("Enter Scout First Name: ")
             scoutLN = input("Enter Scout Last Name: ")
             print("----------")
-            # collectionName = collections["troops"]
-            # Since scouts are embedded in troops, you will actually have to select a troop object. But those can be quite large. For full points, you must unwind the scouts array and then match the one unwound document that has the requested name. (You may assume all scout names are unique.)
             pipline = [
                 {"$unwind": "$scouts"},
-                {"$match": {"scouts.firstname": scoutFN, "scouts.lastname": scoutLN}},
+                {
+                    "$match": {
+                        "scouts.firstname": scoutFN,
+                        "scouts.lastname": scoutLN,
+                    },
+                },
             ]
             scout = ExecuteAggregation(db=db, collectionName="troops", pipline=pipline)
             scoutFullName = (
@@ -91,10 +91,8 @@ def main():
                     )
             print("----------")
         elif choice == 3:
-            # Input the number of a troop. Print out a sales summary for that troop: a list of each scout, with the total value of all allotments for that scout.
             troopNum = int(input("Enter Troop Number: "))
             print("----------")
-            # collectionName = collections["troops"]
             pipline = [
                 {"$match": {"_id": troopNum}},
                 {"$unwind": "$scouts"},
