@@ -27,10 +27,11 @@ def ExecuteAggregation(db, collectionName, pipline):
         return None
 
 def main():
-    choice = int(input("Main Menu\n1. Troop Lookup\n2. Scout Lookup\n3. Sales Report\n>"))
+    choice = int(input("Main Menu\n1. Troop Lookup\n2. Scout Lookup\n3. Sales Report\n> "))
+    db = OpenConnection()
     if choice == 1:
         troopNum = int(input("Enter Troop Number: "))
-        db = OpenConnection()
+        print("----------")
         collectionName = collections["troops"]
         pipline = [{"$match":{"_id": troopNum}}]
         troop = ExecuteAggregation(
@@ -38,7 +39,7 @@ def main():
             collectionName=collectionName, 
             pipline=pipline
         )
-        print("\nTroop Number: {}\n- Founding Date: {}\n- Community: {}\n- Number of Scouts: {}\n- Number of Volunteers: {}\nScouts:".format(
+        print("Troop Number: {}\n- Founding Date: {}\n- Community: {}\n- Number of Scouts: {}\n- Number of Volunteers: {}\nScouts:".format(
             troop[0]["_id"],
             troop[0]["founding_date"],
             troop[0]["community"],
@@ -46,12 +47,44 @@ def main():
             len(troop[0]["volunteers"])
         ))
         for scout in troop[0]["scouts"]:
-            print("- Name: {}".format(scout["firstname"] + " " + scout["lastname"]))
+            print("- {}".format(scout["firstname"] + " " + scout["lastname"]))
         print("Volunteers:")
         for volunteer in troop[0]["volunteers"]:
-            print("- Name: {} (Position: {})".format(volunteer["firstname"] + " " + volunteer["lastname"], volunteer["position"]))
+            print("- {} (Position: {})".format(volunteer["firstname"] + " " + volunteer["lastname"], volunteer["position"]))
     elif choice == 2:
-        pass
+        scoutFN = input("Enter Scout First Name: ")
+        scoutLN = input("Enter Scout Last Name: ")
+        print("----------")
+        collectionName = collections["troops"]
+        # Since scouts are embedded in troops, you will actually have to select a troop object. But those can be quite large. For full points, you must unwind the scouts array and then match the one unwound document that has the requested name. (You may assume all scout names are unique.)
+        pipline = [
+            {"$unwind": "$scouts"},
+            {"$match": {"scouts.firstname": scoutFN, "scouts.lastname": scoutLN}}
+        ]
+        scout = ExecuteAggregation(
+            db=db,
+            collectionName=collectionName,
+            pipline=pipline
+        )
+        scoutFullName = scout[0]["scouts"]["firstname"] + " " + scout[0]["scouts"]["lastname"]
+        print("Scout name: {}\n- Birthday: {}\n- Grade Level: {}".format(
+            scoutFullName,
+            scout[0]["scouts"]["birthday"],
+            scout[0]["scouts"]["gradelevel"]
+        ))
+        print(f"{scoutFullName}'s Adults:")
+        for adult in scout[0]["scouts"]["adults"]:
+            print("- {}".format(adult["firstname"] + " " + adult["lastname"]))
+        print(f"{scoutFullName}'s Allotments:")
+        for allotment in scout[0]["scouts"]["allotments"]:
+            print("- Delivery Date: {}".format(
+                allotment["deliverydate"]
+            ))
+            for cookie in allotment["cookies"]:
+                print("  -{} ({} boxes)".format(
+                    cookie["cookietype"],
+                    cookie["boxes"]
+                ))
     elif choice == 3:
         pass
     else:
