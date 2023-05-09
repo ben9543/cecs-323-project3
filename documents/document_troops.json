@@ -1,7 +1,9 @@
 [
   {
     "_id": 1234,
-    "founding_date": "2022-09-01",
+    "founding_date": {
+      "$date": "2022-09-01"
+    },
     "community": "Long Beach",
     "scouts": [
       {
@@ -10,7 +12,9 @@
         },
         "firstname": "Naomi",
         "lastname": "Nagata",
-        "birthday": "2017-03-03",
+        "birthday": {
+          "$date": "2017-03-03"
+        },
         "gradelevel": "K",
         "adults": [
           {
@@ -23,7 +27,9 @@
         ],
         "allotments": [
           {
-            "deliverydate": "2023-01-19",
+            "deliverydate": {
+              "$date": "2023-01-19"
+            },
             "cookies": [
               {
                 "cookieid": {
@@ -54,13 +60,17 @@
             "amount": {
               "$numberDecimal": "540"
             },
-            "paymentdate": "2023-03-01"
+            "paymentdate": {
+              "$date": "2023-03-01"
+            }
           },
           {
             "amount": {
               "$numberDecimal": "24"
             },
-            "paymentdate": "2023-03-15"
+            "paymentdate": {
+              "$date": "2023-03-15"
+            }
           }
         ]
       },
@@ -70,7 +80,9 @@
         },
         "firstname": "Grace",
         "lastname": "Hopper",
-        "birthday": "2017-01-30",
+        "birthday": {
+          "$date": "2017-01-30"
+        },
         "gradelevel": "K",
         "adults": [
           {
@@ -83,7 +95,9 @@
         ],
         "allotments": [
           {
-            "deliverydate": "2023-01-19",
+            "deliverydate": {
+              "$date": "2023-01-19"
+            },
             "cookies": [
               {
                 "cookieid": {
@@ -114,7 +128,9 @@
             "amount": {
               "$numberDecimal": "360"
             },
-            "paymentdate": "2023-02-01"
+            "paymentdate": {
+              "$date": "2023-02-01"
+            }
           }
         ]
       }
@@ -147,7 +163,9 @@
     ],
     "allotments": [
       {
-        "deliverydate": "2023-01-18",
+        "deliverydate": {
+          "$date": "2023-01-18"
+        },
         "cookies": [
           {
             "cookieid": {
@@ -176,7 +194,9 @@
   },
   {
     "_id": 6789,
-    "founding_date": "2023-01-01",
+    "founding_date": {
+      "$date": "2023-01-01"
+    },
     "community": "Cerritos",
     "scouts": [
       {
@@ -185,7 +205,9 @@
         },
         "firstname": "Barbara",
         "lastname": "Liskov",
-        "birthday": "2014-07-01",
+        "birthday": {
+          "$date": "2014-07-01"
+        },
         "gradelevel": "3",
         "adults": [
           {
@@ -205,7 +227,9 @@
         ],
         "allotments": [
           {
-            "deliverydate": "2023-01-20",
+            "deliverydate": {
+              "$date": "2023-01-20"
+            },
             "cookies": [
               {
                 "cookieid": {
@@ -218,7 +242,7 @@
                 "cookieid": {
                   "$oid": "614d633ab156bc7c1f684ddc"
                 },
-                "cookietype": "samoas",
+                "cookietype": "Samoas",
                 "boxes": 36
               },
               {
@@ -231,7 +255,9 @@
             ]
           },
           {
-            "deliverydate": "2023-02-17",
+            "deliverydate": {
+              "$date": "2023-02-17"
+            },
             "cookies": [
               {
                 "cookieid": {
@@ -255,13 +281,17 @@
             "amount": {
               "$numberDecimal": "1296"
             },
-            "paymentdate": "2023-01-31"
+            "paymentdate": {
+              "$date": "2023-01-31"
+            }
           },
           {
             "amount": {
               "$numberDecimal": "198"
             },
-            "paymentdate": "2023-02-21"
+            "paymentdate": {
+              "$date": "2023-02-21"
+            }
           }
         ]
       },
@@ -271,7 +301,9 @@
         },
         "firstname": "Mary Sparck",
         "lastname": "Jones",
-        "birthday": "2013-12-30",
+        "birthday": {
+          "$date": "2013-12-30"
+        },
         "gradelevel": "3",
         "adults": [
           {
@@ -284,7 +316,9 @@
         ],
         "allotments": [
           {
-            "deliverydate": "2023-01-20",
+            "deliverydate": {
+              "$date": "2023-01-20"
+            },
             "cookies": [
               {
                 "cookieid": {
@@ -310,7 +344,9 @@
             ]
           },
           {
-            "deliverydate": "2023-02-18",
+            "deliverydate": {
+              "$date": "2023-02-18"
+            },
             "cookies": [
               {
                 "cookieid": {
@@ -334,7 +370,9 @@
             "amount": {
               "$numberDecimal": "1614"
             },
-            "paymentdate": "2023-03-15"
+            "paymentdate": {
+              "$date": "2023-03-15"
+            }
           }
         ]
       }
@@ -345,12 +383,15 @@
           "$oid": "64599bb7e033c4d079bf187f"
         },
         "firstname": "Ada",
-        "lastname": "Lovelace"
+        "lastname": "Lovelace",
+        "position": "Co-leader"
       }
     ],
     "allotments": [
       {
-        "deliverydate": "2023-01-18",
+        "deliverydate": {
+          "$date": "2023-01-18"
+        },
         "cookies": [
           {
             "cookieid": {
@@ -376,7 +417,9 @@
         ]
       },
       {
-        "deliverydate": "2023-02-15",
+        "deliverydate": {
+          "$date": "2023-02-15"
+        },
         "cookies": [
           {
             "cookieid": {
