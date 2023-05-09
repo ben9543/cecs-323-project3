@@ -1,22 +1,39 @@
 [
   {
-    "_id": { "$oid": "615c1b39ebaa0e6ebeff97f9" },
+    "_id": {
+      "$oid": "615c1b39ebaa0e6ebeff97f9"
+    },
     "firstname": "James",
     "lastname": "Holden",
-    "birthday": { "$date": "1992-06-04T00:00:00Z" },
+    "birthday": {
+      "$date": "1992-06-04"
+    },
     "roles": [
       {
         "troopnumber": 1234,
         "position": "Co-leader"
       }
     ],
-    "scouts": []
+    "scouts": [
+      {
+        "scoutid": {
+          "$oid": "6459ad7b8d8573401f287f07"
+        },
+        "firstname": "Naomi",
+        "lastname": "Nagata",
+        "troopnumber": 1234
+      }
+    ]
   },
   {
-    "_id": { "$oid": "615c1b39ebaa0e6ebeff97fa" },
+    "_id": {
+      "$oid": "615c1b39ebaa0e6ebeff97fa"
+    },
     "firstname": "Ada",
     "lastname": "Lovelace",
-    "birthday": { "$date": "1990-10-10T00:00:00Z" },
+    "birthday": {
+      "$date": "1990-10-10"
+    },
     "roles": [
       {
         "troopnumber": 1234,
@@ -25,8 +42,71 @@
       {
         "troopnumber": 1234,
         "position": "Cookie Chair"
+      },
+      {
+        "troopnumber": 6789,
+        "position": "Co-leader"
       }
     ],
-    "scouts": []
+    "scouts": [
+      {
+        "scoutid": {
+          "$oid": "6459adfef689d57313bda91b"
+        },
+        "firstname": "Grace",
+        "lastname": "Hopper",
+        "troopnumber": 1234
+      },
+      {
+        "scoutid": {
+          "$oid": "6459ae33c5764ea8a36887ef"
+        },
+        "firstname": "Barbara",
+        "lastname": "Liskov",
+        "troopnumber": 6789
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6459ae626cc73947e9040de5"
+    },
+    "firstname": "Lord",
+    "lastname": "Byron",
+    "birthday": {
+      "$date": "1965-05-13"
+    },
+    "roles": [],
+    "scouts": [
+      {
+        "scoutid": {
+          "$oid": "6459ae33c5764ea8a36887ef"
+        },
+        "firstname": "Barbara",
+        "lastname": "Liskov",
+        "troopnumber": 6789
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6459aea01aafb166d714be9b"
+    },
+    "firstname": "Mary",
+    "lastname": "Jackson",
+    "birthday": {
+      "$date": "1953-01-01"
+    },
+    "roles": [],
+    "scouts": [
+      {
+        "scoutid": {
+          "$oid": "6459aebc4f36374e6c4634f3"
+        },
+        "firstname": "Mary Sparck",
+        "lastname": "Jones",
+        "troopnumber": 6789
+      }
+    ]
   }
 ]
