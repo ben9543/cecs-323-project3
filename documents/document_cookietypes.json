@@ -28,5 +28,25 @@
       "$numberDecimal": "6"
     },
     "ingredients": ["cocoa", "sugar", "peanut oil", "peanut butter"]
+  },
+  {
+    "_id": {
+      "$oid": "64599f777b24db8ae074e468"
+    },
+    "name": "Trefoils",
+    "price": {
+      "$numberDecimal": "6"
+    },
+    "ingredients": []
+  },
+  {
+    "_id": {
+      "$oid": "64599f7cb007d9eb24ce8eb4"
+    },
+    "name": "Toffeetastic",
+    "price": {
+      "$numberDecimal": "6"
+    },
+    "ingredients": []
   }
 ]
