@@ -1,7 +1,7 @@
 [
   {
     "_id": {
-      "$oid": "614d633ab156bc7c1f684ddb"
+      "$oid": "6459e1d3421f7e843657c081"
     },
     "name": "Thin Mints",
     "price": {
@@ -11,7 +11,7 @@
   },
   {
     "_id": {
-      "$oid": "614d633ab156bc7c1f684ddc"
+      "$oid": "6459e1d8ac772da5e5fa6347"
     },
     "name": "Samoas",
     "price": {
@@ -21,7 +21,7 @@
   },
   {
     "_id": {
-      "$oid": "614d633ab156bc7c1f684ddd"
+      "$oid": "6459e1dd618ca6d17bdab637"
     },
     "name": "Tagalongs",
     "price": {

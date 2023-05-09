@@ -9,6 +9,7 @@ collections = {
     "troops": "troops",
     "cookie_types":"cookietypes"
 }
+
 def OpenConnection():
     try:
         client = MongoClient(DATABASE_URL)
