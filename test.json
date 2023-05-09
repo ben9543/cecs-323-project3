@@ -1,0 +1,12 @@
+[
+  { "$match": { "_id": troopNum } },
+  { "$unwind": "$scouts" },
+  { "$unwind": "$scouts.allotments" },
+  { "$unwind": "$scouts.allotments.cookies" },
+  {
+    "$group": {
+      "_id": "$scouts.firstname",
+      "total": { "$sum": "$scouts.allotments.cookies.value" }
+    }
+  }
+]
